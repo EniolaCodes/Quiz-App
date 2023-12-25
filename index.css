@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --primary-color: #F4B92C;
+    --font-color: #000000;
+    --secondary-color: #ffffff;
+}
+body{
+    background: var(--primary-color);
+    color: var(--font-color);
+    font-family: 'Roboto', sans-serif;
+}
+
+.start-btn,
+.info-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 4px 8px 0px #a8a8a8;
+}
+.start-btn button{
+    box-shadow: 0px 4px 8px 0px #a8a8a8;
+}
+
+.btn{
+    font-size: 1.56rem;
+    font-size: 500;
+    padding: 0.9rem 1.9rem;
+    outline: none;
+    border: none;
+    border-radius: 0.5rem;
+    color: var(--font-color);
+    cursor: pointer;
+}
+
+.info-box{
+    display: none;
+    background: var(--secondary-color);
+    color: var(--font-color);
+    border-radius: 0.5rem;
+    width: 34rem;
+    padding: 0.9rem 1.9rem;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
+
+.info-box h1{
+    margin-bottom: 1.5rem;  
+}
+.info{
+    font-size: 1.1rem;
+    letter-spacing: 0.05rem;
+   
+}
+.info span{
+    color: var(--primary-color);
+    font-weight: 600;
+} 
+li{
+    margin-bottom: 1rem;
+}
+.info-box .buttons{
+    height: 4rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 2rem;
+}
+.info-box .buttons button{
+    font-size: 1rem;
+    margin: 1rem 0.5rem 0;
+    border: 0.05rem solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+
+
+.buttons .exit{
+    color: var(--primary-color);
+    
+}
+.buttons .restart{
+    color: var(--secondary-color);
+    background: var(--primary-color);
+}
+.buttons .exit:hover{
+    color: var(--secondary-color);
+    background: var(--primary-color);
+}
+.buttons .restart:hover{
+    background: #e4a208;
+}
