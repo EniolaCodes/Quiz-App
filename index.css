@@ -99,8 +99,8 @@ li{
     
 }
 .buttons .restart,
-#restart,
-#next-button{
+#restart
+{
     color: var(--secondary-color);
     background: var(--primary-color);
 }
@@ -133,4 +133,32 @@ li{
     padding: 0.7rem 1.8rem;
     background: #ceceef;
     border-radius: 1.8rem;
+}
+.question{
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+}
+options-holder{
+    font-size: 0.9rem;
+    width: 100%;
+    padding: 1rem;
+    margin: 0.3rem 0;
+    text-align: left;
+    outline: none;
+    background: transparent;
+    border: 0.05rem solid var(--primary-color);
+}
+.incorrect{
+    background: #ffdde0;
+    color: #d32f2f;
+    border-color: #d32f2f;
+}
+.correct{
+    background: #e7f6d5;
+    color: #689f38;
+    color: #689f38;
+}
+#user-score{
+    font-size: 1.5rem;
+    color: var(--secondary-color);
 }
