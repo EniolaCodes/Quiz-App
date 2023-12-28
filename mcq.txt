@@ -58,7 +58,7 @@
     question: "What is the difference between `flex` and `grid` layout systems in CSS?",
     options : [
     "There is no difference, they are both layout systems",
-    "flex is a layout system for responsive design, grid is a layout system for fixed design"
+    "flex is a layout system for responsive design, grid is a layout system for fixed design",
     "flex is a one-dimensional layout system, grid is a two-dimensional layout system",
     "flex is a two-dimensional layout system, grid is a one-dimensional layout system",
     ],
