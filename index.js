@@ -10,8 +10,8 @@ const nextButton = document.querySelector("#next-button");
 const scoreCountainer = document.querySelector(".score-container");
 const userScore = document.querySelector("#user-score")
 const restartButton = document.querySelector("#restart");
-const scoreCount = 0;
-const count = 11;
+let scoreCount = 0;
+let count = 11;
 let questionCount ;
 let countdown ;
 
@@ -134,20 +134,10 @@ const quizArray = [
 
 
 
-startButton.onclick = () =>{
-    infoBox.style.display = "block"
-    
-}
-exitButton.onclick = () =>{
-    infoBox.style.display ="none"
-}
-continueButton.onclick = () =>{
-quizContainer.style.display = "block"
-infoBox.style.display ="none"
-}  
+ 
 restartButton.addEventListener("click", () =>{
     initial();
-    quizContainer.style.display ="none";
+    quizContainer.style.display ="block";
     scoreCountainer.classList.add("hide");
    });
 
@@ -173,7 +163,7 @@ nextButton.addEventListener("click", (displayNext = () => {
 
 // count down timer
 
-const timerDisplay = () =>{
+const timerDisplay = () => {
     countdown = setInterval(() => {
         count --;
         timeLeft.innerHTML = `${count}s`;
@@ -198,9 +188,11 @@ const quizDisplay = (questionCount) =>{
 function quizCreator() {
     quizArray.sort(() => Math.random() - 0.5);
 
+    let div = document.createElement("div");
+
     for(let i of quizArray){
         i.options.sort(() => Math.random() - 0.5);
-        let div = document.createElement("div");
+       
         div.classList.add("container-mid", "hide");
 
         countOfQuestion.innerHTML = 1 + " of " + quizArray.length + " Question ";
@@ -217,14 +209,14 @@ function quizCreator() {
         <button class="option-div" onclick="checker(this)">${i.options[3]}</button>
         `
     }
-    quizBox.appendChild(div);
-    quizContainer(quizBox);
+    quizContainer.appendChild(div);
+   
 }
 
 function checker(userOption){
     let userSolution = userOption.innerText;
     let question = document.getElementsByClassName("container-mid")[questionCount];
-    let options = document.querySelectorAll(".option-div");
+    let options = question.querySelectorAll(".option-div");
 
     if(userSolution == quizArray[questionCount].correct){
         userOption.classList.add("correct");
@@ -254,4 +246,21 @@ function initial(){
     timerDisplay();
     quizCreator();
     quizDisplay(questionCount);
+}
+startButton.onclick = () =>{
+    initial();
+    infoBox.style.display = "block";
+    
+}
+
+exitButton.onclick = () =>{
+    infoBox.style.display ="none"
+}
+continueButton.onclick = () =>{
+quizContainer.style.display = "block"
+infoBox.style.display ="none"
+}  
+window.onload = () =>{
+    startButton.style.display = "block";
+    quizContainer.style.display = "none";
 }
