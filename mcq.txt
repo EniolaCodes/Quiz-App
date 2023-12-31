@@ -95,16 +95,16 @@
         "myArray[2]",
         "myArray.third",
     ],
-    correct :  "myArray(2)",
+    correct :  "myArray[2]",
 },
 {
     id : "9",
-    question: "Which of the following is used to include an external JavaScript file in an HTML document?",
-    options : [
-        "<js src="script.js"></js>",
-        "<include src="script.js"></include>",
-        "<javascript src="script.js"></javascript>",
-        "<script src="script.js"></script>",
-    ],
-    correct : "<script src="script.js"></script>",
+        question: "What is the purpose of the addEventListener in JavaScript?",
+        options : [
+           "To create a new HTML element",
+           "To add a style to an existing element",
+           "To attach an event handler function to an element",
+           "To perform AJAX requests"
+        ],
+        correct :  "To attach an event handler function to an element",
 },

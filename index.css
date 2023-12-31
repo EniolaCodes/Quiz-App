@@ -46,6 +46,7 @@ button{
 #next-button{
     font-size: 1rem;
     padding: 0.7rem 1.8rem;
+    margin-top: 1.5rem;
     color: var(--secondary-color);
     background: var(--primary-color);
     float: right;
@@ -139,9 +140,10 @@ li{
 }
 .question{
     margin-bottom: 1.25rem;
+    font-size: 1.2rem;
     font-weight: 600;
 }
-option-div{
+.option-div{
     font-size: 0.9rem;
     width: 100%;
     padding: 1rem;
@@ -149,7 +151,8 @@ option-div{
     text-align: left;
     outline: none;
     background: transparent;
-    border: 0.05rem solid var(--primary-color);
+    border: 0.3rem;
+    border: 0.06rem solid #c0bfd2;
 }
 .option-div:disabled{
     color: var(--font-color);
@@ -163,7 +166,7 @@ option-div{
 .correct{
     background: #e7f6d5;
     color: #689f38;
-    color: #689f38;
+    border-color: #689f38;
 }
 #user-score{
     font-size: 1.5rem;

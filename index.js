@@ -116,18 +116,18 @@ const quizArray = [
             "myArray[2]",
             "myArray.third",
         ],
-        correct :  "myArray(2)",
+        correct :  "myArray[2]",
     },
     {
         id : "9",
-        question: "Which of the following is used to include an external JavaScript file in an HTML document?",
+        question: "What is the purpose of the addEventListener in JavaScript?",
         options : [
-            "<js src='script.js'></js>",
-            "<include src='script.js'></include>",
-            "<javascript src='script.js'></javascript>",
-            "<script src='script.js'></script>",
+           "To create a new HTML element",
+           "To add a style to an existing element",
+           "To attach an event handler function to an element",
+           "To perform AJAX requests"
         ],
-        correct : "<script src='script.js'></script>",
+        correct :  "To attach an event handler function to an element",
     },
     
 ]
@@ -187,10 +187,11 @@ const quizDisplay = (questionCount) =>{
  
 function quizCreator() {
     quizArray.sort(() => Math.random() - 0.5);
+    let div;
 
     for(let i of quizArray){
         i.options.sort(() => Math.random() - 0.5);
-        let div = document.createElement("div");
+        div = document.createElement("div");
         div.classList.add("container-mid", "hide");
 
         countOfQuestion.innerHTML = 1 + " of " + quizArray.length + " Question ";
@@ -206,9 +207,9 @@ function quizCreator() {
         <button class="option-div" onclick="checker(this)">${i.options[2]}</button>
         <button class="option-div" onclick="checker(this)">${i.options[3]}</button>
         `;
+        quizContainer.appendChild(div);
     }
-    quizContainer.appendChild(div);
-   
+    
 }
 
 function checker(userOption){
@@ -216,7 +217,7 @@ function checker(userOption){
     let question = document.getElementsByClassName("container-mid")[questionCount];
     let options = question.querySelectorAll(".option-div");
 
-    if(userSolution == quizArray[questionCount].correct){
+    if(userSolution === quizArray[questionCount].correct){
         userOption.classList.add("correct");
         scoreCount++;
     }
