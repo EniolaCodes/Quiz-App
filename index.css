@@ -4,79 +4,86 @@
     box-sizing: border-box;
 }
 :root{
-    --primary-color: #F4B92C;
+    --primary-color: #00008b;
     --font-color: #000000;
     --secondary-color: #ffffff;
 }
 body{
     height: 100vh;
     background: var(--primary-color);
-    /* background: #009688; */
     color: var(--font-color);
     font-family: 'Roboto', sans-serif;
-
 }
 
-.start-btn,
-.info-box,
-.score-container,
-#display-container,
+.start-screen,
+.score-container{
+    /* position: absolute; */
+    top:0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;  
+}
+
+
+button{
+    outline: none;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+#start-button,
 #restart{
+    font-size: 1.56rem;
+    font-weight: 500;
+    padding: 0.9rem 1.9rem;
+    color: var(--font-color);
+   
+}
+
+#next-button{
+    font-size: 1rem;
+    padding: 0.7rem 1.8rem;
+    color: var(--secondary-color);
+    background: var(--primary-color);
+    float: right;
+    box-shadow: 0 20px 30px rgba(0,0,0,0.4);
+    transition: all 0.3s ease;
+}
+#next-button:hover{
+    opacity: 0.6;
+}
+#restart{
+margin-top: 0.9rem;
+}
+
+#display-container,
+.info-box{
+    background: var(--secondary-color);
+    color: var(--font-color);
+    padding: 0.9rem 1.9rem;
+    border-radius: 0.5rem;
+    max-width: 37.5rem;
+    /* margin: 0 auto; */
+    width: 80%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 0px 4px 8px 0px #a8a8a8;
-}
-.info-box,
-#display-container{
-    display: none;
-}
-.start-btn button{
-    box-shadow: 0px 4px 8px 0px #a8a8a8;
-}
-#restart{
-    margin-top: 0.9rem;
-}
-.btn{
-    font-size: 1.56rem;
-    font-weight: 500;
-    padding: 0.9rem 1.9rem;
-    outline: none;
-    border: none;
-    border-radius: 0.5rem;
-    color: var(--font-color);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.info-box,
-#display-container{
-    background: var(--secondary-color);
-    color: var(--font-color);
-    border-radius: 0.5rem;
-    max-width: 34rem;
-    width: 80%;
-    padding: 0.9rem 1.9rem;
-    pointer-events: auto;
-    transform: translate(-50%, -50%) scale(1);
-}
-
-.hide{
-    display :none;
 }
 .info-box h1{
-    margin-bottom: 1.5rem;  
+    margin-bottom: 1.5rem;
 }
 .info{
     font-size: 1.1rem;
-    letter-spacing: 0.05rem;
-   
+    letter-spacing: 0.05;
 }
 .info span{
     color: var(--primary-color);
     font-weight: 600;
-} 
+}
 li{
     margin-bottom: 1rem;
 }
@@ -86,39 +93,33 @@ li{
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding: 0 2rem;
+    padding: 0.2rem;
 }
 .info-box .buttons button{
     font-size: 1rem;
+    font-weight: 600;
+    padding: 0.9rem 1.9rem;
     margin: 1rem 0.5rem 0;
-    border: 0.05rem solid var(--primary-color);
 }
-
-
-
 .buttons .exit{
+    border: 0.05rem solid var(--primary-color);
     color: var(--primary-color);
-    
-}
-.buttons .restart,
-#restart
-{
-    color: var(--secondary-color);
-    background: var(--primary-color);
-}
-#next-button{
-    font-size: 1rem;
-    float: right;
 }
 .buttons .exit:hover{
     color: var(--secondary-color);
     background: var(--primary-color);
 }
-.buttons .restart:hover,
-#restart:hover,
-#next-button:hover{
-    background: #e4a208;
+.buttons .restart{
+    color: var(--secondary-color);
+    background: var(--primary-color);
 }
+.buttons .restart:hover{
+    background: #070735;
+}
+.hide{
+    display :none;
+}
+
 .header{
     display: flex;
     justify-content: space-between;
@@ -127,13 +128,13 @@ li{
     border-bottom: 0.1rem solid #c0bfd2;
     padding-bottom: 0.5rem;
 }
-.timer-holder{
+.timer-div{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 7.5rem;
     padding: 0.7rem 1.8rem;
-    background: #ceceef;
+    background: #e1f5fe;
     border-radius: 1.8rem;
 }
 .question{
@@ -149,6 +150,10 @@ option-div{
     outline: none;
     background: transparent;
     border: 0.05rem solid var(--primary-color);
+}
+.option-div:disabled{
+    color: var(--font-color);
+    cursor: not-allowed;
 }
 .incorrect{
     background: #ffdde0;
