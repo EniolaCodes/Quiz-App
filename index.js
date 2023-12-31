@@ -137,10 +137,7 @@ const quizArray = [
 
  
 restartButton.addEventListener("click", () =>{
-    initial();
-    displayContainer.classList.remove("hide");
-    infoBox.classList.remove("hide")
-    scoreCountainer.classList.add("hide")
+    startScreen.classList.remove("hide");
    });
 
 
