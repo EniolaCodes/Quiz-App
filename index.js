@@ -12,7 +12,7 @@ const scoreCountainer = document.querySelector(".score-container");
 const userScore = document.querySelector("#user-score")
 const restartButton = document.querySelector("#restart");
 let scoreCount = 0;
-let count = 11;
+let count = 16;
 let questionCount ;
 let countdown ;
 
@@ -155,7 +155,7 @@ nextButton.addEventListener("click", (displayNext = () => {
         countOfQuestion.innerHTML = questionCount + 1 + " of " + quizArray.length + " Question ";
 
         quizDisplay(questionCount);
-        count = 11;
+        count = 16;
         clearInterval(countdown);
         timerDisplay();
     }
@@ -216,7 +216,7 @@ function checker(userOption){
     let userSolution = userOption.innerText;
     let question = document.getElementsByClassName("container-mid")[questionCount];
     let options = question.querySelectorAll(".option-div");
-
+    console.log(questionCount);
     if(userSolution === quizArray[questionCount].correct){
         userOption.classList.add("correct");
         scoreCount++;
@@ -224,8 +224,8 @@ function checker(userOption){
     else{
         userOption.classList.add("incorrect");
 
-        options.forEach((element) =>{
-            if(element.innerText = quizArray[questionCount].correct){
+        options.forEach((element) => {
+            if(element.innerText === quizArray[questionCount].correct){
                 element.classList.add("correct");
             }
         });
@@ -241,7 +241,7 @@ function initial(){
     quizContainer.innerHTML = "";
     questionCount = 0;
     scoreCount = 0;
-    count = 11;
+    count = 16;
     clearInterval(countdown);
     timerDisplay();
     quizCreator();
