@@ -21,18 +21,18 @@ let countdown ;
 const quizArray = [
     {
         id : "0",
-        question : " What is the difference between `var`, `let`, and `const` keywords in javascript?",
+        question : " What is the difference between 'var', 'let', and 'const' keywords in javascript?",
         options : [
-            " `var` declares a global variable, `let` declares a block-scoped variable, and `const` declares a constant variable",
-            " `var` declares a function-scoped variable, `let` declares a global variable, and `const` declares a constant variable",
-            " `var` declares a function-scoped variable, `let` declares a block-scoped variable, and `const` declares a block-scoped constant variable",
+            "var declares a global variable, let declares a block-scoped variable, and const declares a constant variable",
+            "var declares a function-scoped variable, let declares a global variable, and const declares a constant variable",
+            "var declares a function-scoped variable, let declares a block-scoped variable, and const declares a block-scoped constant variable",
             "There is no difference, they are all synonyms",
         ],
-        correct : "var` declares a global variable, `let` declares a block-scoped variable, and `const` declares a constant variable",
+        correct : "var declares a global variable, let declares a block-scoped variable, and const declares a constant variable",
     },
     {
         id : "1",
-        question: "What is the purpose of the `async` and `await` keywords in javascript?",
+        question: "What is the purpose of the 'async' and 'await' keywords in javascript?",
         options : [
             "They allow writing asynchronous code in a synchronous manner",
             "They allow writing synchronous code in an asynchronous manner",
@@ -43,7 +43,7 @@ const quizArray = [
     },
     {
         id : "2",
-        question: "What is the difference between `==` and `===` operators in javascript?",
+        question: "What is the difference between '==' and '===' operators in javascript?",
         options : [
             "== compares types only, === compares values and types",
             "== compares values only, === compares values and types",
@@ -61,7 +61,7 @@ const quizArray = [
             "display: none removes the element from the layout, visibility: hidden keeps the element in the layout but makes it invisible",
             "There is no difference, they both hide the element",
         ],
-        correct : " `display: none` removes the element from the layout, `visibility: hidden` keeps the element in the layout but makes it invisible",
+        correct : "display: none removes the element from the layout, visibility: hidden keeps the element in the layout but makes it invisible",
     },
     {
         id : "4",
@@ -76,7 +76,7 @@ const quizArray = [
     },
     {
         id : "5",
-        question: "What is the difference between `flex` and `grid` layout systems in CSS?",
+        question: "What is the difference between flex and grid layout systems in CSS?",
         options : [
         "There is no difference, they are both layout systems",
         "flex is a layout system for responsive design, grid is a layout system for fixed design",
