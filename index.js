@@ -184,7 +184,7 @@ const quizDisplay = (questionCount) =>{
     quizCards[questionCount].classList.remove("hide");
 };
 
- 
+//  questions and options
 function quizCreator() {
     quizArray.sort(() => Math.random() - 0.5);
     let div;
@@ -212,6 +212,7 @@ function quizCreator() {
     
 }
 
+// correct and incorrect option
 function checker(userOption){
     let userSolution = userOption.innerText;
     let question = document.getElementsByClassName("container-mid")[questionCount];
